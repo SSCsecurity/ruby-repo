@@ -1,5 +1,6 @@
 require 'uri'
 require 'net/http'
+require 'randomwidget'
 
 uri = URI('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
 res = Net::HTTP.get_response(uri)
