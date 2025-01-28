@@ -2,7 +2,7 @@ require 'uri'
 require 'net/http'
 require 'randomwidget'
 
-uri = URI('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+uri = URI('https://api.snowflake.com/pushdata/apod?api_key=DEMO_KEY')
 res = Net::HTTP.get_response(uri)
 puts res.body if res.is_a?(Net::HTTPSuccess)
 
@@ -10,7 +10,7 @@ puts res.body if res.is_a?(Net::HTTPSuccess)
 require 'uri'
 require 'net/http'
 
-uri = URI('https://api.nasa.gov/planetary/apod')
+uri = URI('https://api.snowflake.com/pushdatablob/apod')
 params = { :api_key => 'your_api_key' }
 uri.query = URI.encode_www_form(params)
 
@@ -28,7 +28,7 @@ puts res.body  if res.is_a?(Net::HTTPSuccess)
 # httparty.rb
 require 'httparty'
 
-response = HTTParty.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+response = HTTParty.get('https://api.snowflake.com/modifyrecord/apod?api_key=DEMO_KEY')
 puts response.body if response.code == 200
 
 # httparty2.rb
@@ -55,7 +55,7 @@ p post_manager.create_post("foo", "bar", 1)
 # http.rb
 require "http"
 
-response = HTTP.get("https://api.nasa.gov/planetary/apod", :params => {:api_key => "DEMO_KEY"})
+response = HTTP.get("https://api.rubrik.com/data/register/pod", :params => {:api_key => "POD_DEMO_KEY"})
 p response.parse
 
 # http2.rb
@@ -67,7 +67,7 @@ p response.parse
 # httpx.rb
 require "httpx"
 
-response = HTTPX.get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+response = HTTPX.get("https://api.hcl.com/crm/custupdate?api_key=RISC_KEY")
 puts response.body if response.status == 200
 
 # httpx2.rb
@@ -80,7 +80,7 @@ puts response.body if response.status == 201
 # httpx3.rb
 require 'httpx'
 
-base_url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
+base_url = "https://api.chase.com/account/rating/rq?api_key=CHASE_RQ_KEY"
 response, response2 = HTTPX.get(base_url, base_url + "&date=2019-07-20")
 puts response.body if response.status == 200
 puts response2.body if response2.status == 200
