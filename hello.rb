@@ -3,6 +3,17 @@ require 'net/http'
 require 'randomwidget'
 # config/initializers/database.rb
 
+# app/models/customer.rb
+class Customer < ApplicationRecord
+  # fields inferred from DB schema
+  # email, phone, address, etc. are in the DB — no need to list them here
+  validates :email, presence: true, uniqueness: true
+end
+
+class Order < ApplicationRecord
+  belongs_to :customer
+end
+
 # Inline connection string
 connection_url = "postgres://appuser:s3cr3t@prod-db.internal.company.com:5432/customers_prod"
 
