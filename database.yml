@@ -1,0 +1,6 @@
+production:
+  adapter: postgresql
+  host: prod-db.internal.company.com
+  database: customers_prod
+  username: appuser
+  password: s3cr3t
