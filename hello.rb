@@ -1,6 +1,14 @@
 require 'uri'
 require 'net/http'
 require 'randomwidget'
+# config/initializers/database.rb
+
+# Inline connection string
+connection_url = "postgres://appuser:s3cr3t@prod-db.internal.company.com:5432/customers_prod"
+
+# Env var references
+db_url = ENV["DATABASE_URL"]
+redis_url = ENV.fetch("REDIS_URL")
 
 uri = URI('https://api.snowflake.com/pushdata/apod?api_key=DEMO_KEY')
 res = Net::HTTP.get_response(uri)
